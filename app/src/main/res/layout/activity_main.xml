@@ -1,0 +1,237 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="@android:color/background_dark">
+
+    <EditText
+        android:id="@+id/name_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:inputType="textCapWords"
+        android:textColor="#ffffffff"
+        android:textAllCaps="true"
+        android:layout_marginBottom="16dp"/>
+    <EditText
+        android:id="@+id/email_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter email"
+        android:textColor="#ffffffff"
+        android:inputType="text"
+        android:textAllCaps="true"
+        android:layout_marginBottom="16dp"/>
+    <EditText
+        android:id="@+id/phone_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your contact number"
+        android:inputType="text"
+        android:textColor="#ffffffff"
+        android:textAllCaps="true"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toppings"
+        android:textColor="@android:color/background_light"
+        android:textAllCaps="true"
+        android:layout_marginBottom="16dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16sp">
+        <CheckBox
+            android:id="@+id/whipped_cream_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5sp"
+            android:text="Whipped cream"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:layout_marginRight="30sp"/>
+        <CheckBox
+            android:id="@+id/extra_coco_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5sp"
+            android:text="Extra coco"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specify Quantity"
+        android:textColor="@android:color/background_light"
+        android:textAllCaps="true"
+        android:layout_marginBottom="16dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="-"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="decreaseQuantity"/>
+
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/background_light"/>
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="+"
+            android:onClick="increaseQuantity"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:width="48dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textColor="@android:color/background_light"
+        android:textAllCaps="true"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/background_light"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="order now"
+        android:onClick="submitOrder"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Print Recipt"
+        android:onClick="PrintRecipt"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:text="Bill in favour of"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/name_text_view"
+                android:gravity="right"
+                android:text=""
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Bill in favour of"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/email_text_view"
+                android:gravity="right"
+                android:text=""
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Contact Number"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/contact_text_view"
+                android:gravity="right"
+                android:text=""
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Quantity ordered"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/quant_text_view"
+                android:gravity="right"
+                android:text=""
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Your Bill"
+                android:padding="3dip" />
+            <TextView
+                android:text=""
+                android:id="@+id/message_text_view"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="G.S.T @18%"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/gst_text_view"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Cream"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/cream_text_view"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Coco"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/coco_text_view"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Total"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/total_text_view"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
+</ScrollView>
